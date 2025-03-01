@@ -15,6 +15,8 @@ validators:
   # vibedao validator self-delegation: 1,000,000 VIBE = 1,000,000 × 10⁶ = 1000000000000 uvibe
   - name: vibedao
     bonded: "1000000000000uvibe"
+    config:
+      moniker: "VibeDAO"
 genesis:
   chain_id: "vibesocial-8848"
   consensus_params:
