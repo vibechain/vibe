@@ -1,7 +1,7 @@
 {
   "app_name": "vibed",
   "app_version": "",
-  "genesis_time": "2025-03-01T08:45:49.00781333Z",
+  "genesis_time": "2025-03-01T09:36:02.10096509Z",
   "chain_id": "vibesocial-8848",
   "initial_height": 1,
   "app_hash": null,
@@ -19,14 +19,14 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "vibe123rr3x9ahly4xh6sulvdjkpy438ah2mura2ug3",
+          "address": "vibe1t646gx73w95q0txvgkc60lsha2xz795mgghhz8",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
         },
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "vibe1c8hncg2v8g5tvc0e0ut4jq6kzgs40vne87utza",
+          "address": "vibe16jt2u834mr5sux22v50zcpws4wx94zjgnn0j4x",
           "pub_key": null,
           "account_number": "1",
           "sequence": "0"
@@ -43,7 +43,7 @@
       },
       "balances": [
         {
-          "address": "vibe123rr3x9ahly4xh6sulvdjkpy438ah2mura2ug3",
+          "address": "vibe1t646gx73w95q0txvgkc60lsha2xz795mgghhz8",
           "coins": [
             {
               "denom": "uvibe",
@@ -52,7 +52,7 @@
           ]
         },
         {
-          "address": "vibe1c8hncg2v8g5tvc0e0ut4jq6kzgs40vne87utza",
+          "address": "vibe16jt2u834mr5sux22v50zcpws4wx94zjgnn0j4x",
           "coins": [
             {
               "denom": "uvibe",
@@ -160,10 +160,10 @@
                 },
                 "min_self_delegation": "1",
                 "delegator_address": "",
-                "validator_address": "vibevaloper123rr3x9ahly4xh6sulvdjkpy438ah2muhqp76h",
+                "validator_address": "vibevaloper1t646gx73w95q0txvgkc60lsha2xz795mu4u4sp",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "a7zHby7oLYGBUZFym11CsE6zmMBTGu0AY2TvwSBM9Bw="
+                  "key": "eghRIzL8/uyJXuxRsCvZUrv5rf7a40fs/4ArrBRy4Zo="
                 },
                 "value": {
                   "denom": "uvibe",
@@ -171,7 +171,7 @@
                 }
               }
             ],
-            "memo": "3c69e6a8eb83a2357d87cf00f758ff8dced590e8@149.56.180.51:26656",
+            "memo": "16655d123c1de15fab2eb7e94dbc250007b4f11e@149.56.180.51:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -181,7 +181,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "Ayw09IY/rYzzrut4leielL4IL8o5FclqU7N1UyFluRHE"
+                  "key": "AwA6Mvt6+EkWaY/d5iSpR1fuZOIsUjsc4eYj4YM0bVwX"
                 },
                 "mode_info": {
                   "single": {
@@ -200,7 +200,7 @@
             "tip": null
           },
           "signatures": [
-            "hAuqnTxEYHH8F/Gb1Mzr1utf7k4aTOJPuZ0HoTReMud3CLiJBknNQ4wIgKunvfsLhhLTH+7Wdaqk6nX+PDNsZA=="
+            "4LZtBOBxj5pDxg1tjRTQuWtIAqOBhwfli519DzOSMa430fKsUXGTRDybNq8bXY0sIVhPXlH14WzOnU0fa47pvg=="
           ]
         }
       ]
@@ -386,12 +386,16 @@
       "params": {}
     },
     "wasm": {
+      "codes": [],
+      "contracts": [],
       "params": {
         "code_upload_access": {
+          "addresses": [],
           "permission": "Everybody"
         },
         "instantiate_default_permission": "Everybody"
-      }
+      },
+      "sequences": []
     }
   },
   "consensus": {
