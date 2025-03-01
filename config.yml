@@ -1,28 +1,112 @@
 version: 1
 validation: sovereign
-accounts: 
-- name: alice
-  coins:
-  - 20000token
-  - 200000000stake
-- name: bob
-  coins:
-  - 10000token
-  - 100000000stake
+build:
+  binary: "vibed"
+init:
+  home: "$HOME/.vibe"
+accounts:
+  # vibedao: 10,000,000 VIBE = 10,000,000 × 10⁶ = 10000000000000 uvibe
+  - name: vibedao
+    coins: ["10000000000000uvibe"]
+  # faucet: 100,000 VIBE = 100,000 × 10⁶ = 100000000000 uvibe
+  - name: faucet
+    coins: ["100000000000uvibe"]
+validators:
+  # vibedao validator self-delegation: 1,000,000 VIBE = 1,000,000 × 10⁶ = 1000000000000 uvibe
+  - name: vibedao
+    bonded: "1000000000000uvibe"
+genesis:
+  chain_id: "vibesocial-8848"
+  consensus_params:
+    block:
+      max_bytes: "22020096"
+      time_iota_ms: "1000"
+  app_state:
+    bank:
+      denom_metadata:
+        - description: "Native Asset of Vibe Social Chain"
+          denom_units:
+            - denom: "uvibe"
+              exponent: 0
+            - denom: "VIBE"
+              exponent: 6
+          base: "uvibe"
+          display: "VIBE"
+          name: "Vibe Token"
+          symbol: "VIBE"
+    staking:
+      params:
+        bond_denom: "uvibe"
+        unbonding_time: "1814400s"
+    mint:
+      params:
+        mint_denom: "uvibe"
+        inflation_rate_change: "0.15"
+        inflation_max: "0.40"
+        inflation_min: "0.05"
+        goal_bonded: "0.730000000000000000"
+    slashing:
+      params:
+        signed_blocks_window: "1000"
+        min_signed_per_window: "0.5"
+        downtime_jail_duration: "600s"
+        slash_fraction_double_sign: "0.03"  # 3%
+        slash_fraction_downtime: "0.01"     # 1%
+        
+    crisis:
+      constant_fee:
+        denom: "uvibe"
+        amount: "100000000"  # 100 VIBE = 1e6 uvibe
+    gov:
+      deposit_params:
+        min_deposit:
+          - denom: "uvibe"
+            amount: "100000000"  # 100 VIBE = 10e6 uvibe
+        max_deposit_period: "172800s"
+      params:
+        expedited_min_deposit:
+          - denom: "uvibe"
+            amount: "500000000"  # 500 VIBE = 50e6 uvibe
+        expedited_threshold: "0.667000000000000000"
+        expedited_voting_period: "86400s"
+        max_deposit_period: "172800s"
+        min_deposit:
+          - denom: "uvibe"
+            amount: "10000000"  # 10 VIBE
+        min_deposit_ratio: "0.010000000000000000"
+        min_initial_deposit_ratio: "0.000000000000000000"
+        proposal_cancel_dest: ""
+        proposal_cancel_ratio: "0.500000000000000000"
+        quorum: "0.334000000000000000"
+        threshold: "0.500000000000000000"
+        veto_threshold: "0.334000000000000000"
+        voting_period: "604800s"
+      proposals: []
+      starting_proposal_id: "1"
+      tally_params: null
+      votes: []
+      voting_params: null
+    distribution:
+      params:
+        community_tax: "0.020000000000000000"
+        base_proposer_reward: "0.010000000000000000"
+        bonus_proposer_reward: "0.040000000000000000"
+        withdraw_addr_enabled: true
+      fee_pool:
+        community_pool: []
+      delegator_withdraw_infos: []
+      previous_proposer: ""
+      outstanding_rewards: []
+      validator_accumulated_commissions: []
+      validator_historical_rewards: []
+      validator_current_rewards: []
+      delegator_starting_infos: []
+      validator_slash_events: []
+    wasm:
+      params:
+        code_upload_access:
+          permission: Everybody
+        instantiate_default_permission: Everybody
 client:
   openapi:
     path: docs/static/openapi.yml
-faucet:
-  name: bob
-  coins:
-  - 5token
-  - 100000stake
-validators:
-- name: alice
-  bonded: 100000000stake
-- name: validator1
-  bonded: 100000000stake
-- name: validator2
-  bonded: 200000000stake
-- name: validator3
-  bonded: 300000000stake
